@@ -223,7 +223,8 @@ require __DIR__ . '/vendor/autoload.php';
                 showMessages() {
                     // get all messajes from the API                    
                     axios.get("https://copilot-projects.herokuapp.com/api/v1/get-messages.php").then(response => {
-                        this.messages = response.data
+                        this.messages = [response.data]
+                        console.log(this.messages)
                     }).catch(error => {
                         // TEMPORARY SOLUTION TO GET THE ERROR MESSAGE WITHOUT THE API
                         this.errors_msg.push("error getting messages")
