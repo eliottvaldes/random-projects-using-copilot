@@ -5,6 +5,15 @@
 
 // USING HTML FILE
 // function to get the current time every second and inner into the html file in the id="time"
+
+
+// easier function
+function getCurrentDateTime() {
+    var date = new Date();
+    document.getElementById("date").innerHTML = (`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`);
+    document.getElementById("time").innerHTML = (`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} ${date.getHours() >= 12 ? 'PM' : 'AM'}`);
+}
+
 // more legible function
 function getTime() {
     var date = new Date();
@@ -23,11 +32,6 @@ function getTime() {
 }
 
 
-function getCurrentDateTime() {
-    var date = new Date();
-    document.getElementById("date").innerHTML = (`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`);
-    document.getElementById("time").innerHTML = (`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} ${date.getHours() >= 12 ? 'PM' : 'AM'}`);
-}
 
 // ===========================================================================================
 
