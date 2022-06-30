@@ -184,7 +184,7 @@
             methods: {
                 showMessages() {
                     // get all messajes from the API                    
-                    axios.get("https://teting-efvl.herokuapp.com/src/v1/get-messages.php").then(response => {
+                    axios.get("https://api-copilot.herokuapp.com/v1/get-messages.php").then(response => {
                         this.messages = response.data
                     }).catch(error => {
                         // TEMPORARY SOLUTION TO GET THE ERROR MESSAGE WITHOUT THE API
