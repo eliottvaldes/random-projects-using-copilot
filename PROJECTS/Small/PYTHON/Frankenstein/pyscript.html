@@ -1,0 +1,93 @@
+<!-- html file that includes python code -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frankenstein html-python</title>
+
+    <!-- import scripts to be able to include python code -->
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <!-- import libraries env -->
+    <py-env>
+        - numpy
+        - matplotlib
+    </py-env>
+
+    <!-- import link for bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="container-flud">
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Frankenstein project that implments python code inside html</h1>
+                </div>
+            </div>
+            <div class="row mx-5">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-header">
+                                <h1>
+                                    Code extract from
+                                    <a href="https://github.com/pyscript/pyscript/blob/main/docs/tutorials/getting-started.md"
+                                        target="_blank" rel="noopener noreferrer">
+                                        PyScript github repository
+                                    </a>
+                                </h1>
+                            </div>
+                            <div class="card-text">
+                                <br><br>
+                                <b><p>Today is <u><label id='today'></label></u></p></b>
+                                <br>
+                                <div id="pi" class="alert alert-primary"></div>
+                                <py-script>
+                                import datetime as dt
+                                pyscript.write('today', dt.date.today().strftime('%A %B %d, %Y'))
+
+                                def compute_pi(n):
+                                    pi = 2
+                                    for i in range(1,n):
+                                        pi *= 4 * i ** 2 / (4 * i ** 2 - 1)
+                                    return pi
+
+                                pi = compute_pi(100000)
+                                pyscript.write('pi', f'π is approximately {pi:.3f}')
+                                </py-script>
+                            </div>
+                            <br><br>
+                            <div class="card-text">
+                                <h1>Let's plot random numbers</h1>
+                                <div id="plot"></div>
+                                <py-script output="plot">
+                                import matplotlib.pyplot as plt
+                                import numpy as np
+
+                                x = np.random.randn(1000)
+                                y = np.random.randn(1000)
+
+                                fig, ax = plt.subplots()
+                                ax.scatter(x, y)
+                                fig
+                                </py-script>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
