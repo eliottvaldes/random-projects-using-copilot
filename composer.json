@@ -1,5 +1,20 @@
 {
+    "name": "eliottvaldes/random-projects-using-copilot",
+    "description": "deploy using heroku",
+    "type": "project",
     "require": {
-        "php": "^7.1.0"
-    }
+        "php": "^7.4.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Eliottvaldes\\RandomProjectsUsingCopilot\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "eliottvaldes",
+            "email": "eliottvaldes@hotmail.com"
+        }
+    ]
 }
