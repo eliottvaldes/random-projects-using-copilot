@@ -184,12 +184,12 @@
             methods: {
                 showMessages() {
                     // get all messajes from the API                    
-                    axios.get("/api/messages").then(response => {
+                    axios.get("https://teting-efvl.herokuapp.com/src/v1/get-messages.php").then(response => {
                         this.messages = response.data
                     }).catch(error => {
                         // TEMPORARY SOLUTION TO GET THE ERROR MESSAGE WITHOUT THE API
                         // this.errors_msg.push("error getting messages")
-                        // this.errors_msg.push(error)
+                        this.errors_msg.push(error)
                     }).finally(() => {
                         this.fetchingMessages = false
                     })
