@@ -21,9 +21,9 @@ require __DIR__ . '/vendor/autoload.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome!!</title>
     <!-- import link for bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- import vuejs link -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
 </head>
 
@@ -76,12 +76,9 @@ require __DIR__ . '/vendor/autoload.php';
                                         <h5 class="text-start">
                                             Collabotaros:
                                             <br><br>
-                                            <div class="mb-3 text-start"
-                                                v-for="{ID, name, email, position, country, phone, github} in collaborators">
+                                            <div class="mb-3 text-start" v-for="{ID, name, email, position, country, phone, github} in collaborators">
                                                 <p>
-                                                    <button class="btn btn-primary" type="button"
-                                                        data-bs-toggle="collapse" :data-bs-target="'#'+ID"
-                                                        aria-expanded="false" :aria-controls="ID">
+                                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" :data-bs-target="'#'+ID" aria-expanded="false" :aria-controls="ID">
                                                         {{name}} - {{position}} <br>
                                                         View Details
                                                     </button>
@@ -192,12 +189,9 @@ require __DIR__ . '/vendor/autoload.php';
 
 
     <!-- bootstrap integration link -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
-    <!-- import vuejs link -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
 
     <!-- import axios link -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -224,41 +218,13 @@ require __DIR__ . '/vendor/autoload.php';
                     // get all messajes from the API                    
                     axios.get("https://copilot-projects.herokuapp.com/api/v1/get-messages.php").then(response => {
                         this.messages = [response.data]
-                        console.log(this.messages)
                     }).catch(error => {
                         // TEMPORARY SOLUTION TO GET THE ERROR MESSAGE WITHOUT THE API
                         this.errors_msg.push("error getting messages")
                         // this.errors_msg.push(error)
                     }).finally(() => {
-                    this.fetchingMessages = false
+                        this.fetchingMessages = false
                     })
-
-                    /*
-                    * TEMPORAL TEST *
-                    this.messages = [{
-                        "welcome": "Welcome to Random Coding Challenge",
-                        "information": "Here you can see some information of all the projects developed using Copilot",
-                        "collaborators": [
-                            {
-                                "ID": "VALE",
-                                "name": "Eliot Valdes",
-                                "email": "eliottvaldes@hotmail.com",
-                                "phone": "xxxx-xxxx-xxxx",
-                                "country": "MX",
-                                "position": "Web Developer",
-                                "website": "eliottvaldes.live",
-                                "linkedin": "...",
-                                "twitter": "@Valdes_05",
-                                "facebook": "Eliot Vald\u00e9s Luis",
-                                "instagram": "@eliotvaldes_",
-                                "github": "https://github.com/eliottvaldes"
-                            },
-                            {
-                                "ID": "VALEsd", "name": "...", "email": "", "phone": "", "country": "", "position": "", "website": "", "linkedin": "", "twitter": "", "facebook": "", "instagram": "", "github": ""
-                            }
-                        ]
-                    }]
-                    */
 
                 },
                 showAllProjects() {
