@@ -22,8 +22,8 @@ $projects = array(
     0 => array(
         "ID" => "1",
         "language" => "Python",
-        "language_icon" => "Python",
-        "name" => "Pyscript example",
+        "language_icon" => "python",
+        "name" => "Pyscript Frankie",
         "description" => "Example of a Python script inside of HTML",
         "url" => $path . "Small/PYTHON/Frankenstein/pyscript.html",
         "creator" => "Eliot Valdes",
@@ -33,10 +33,10 @@ $projects = array(
         )
     ),
     1 => array(
-        "ID" => "1",
+        "ID" => "2",
         "language" => "JS",
         "language_icon" => "js",
-        "name" => "Simple CLock",
+        "name" => "Clock :)",
         "description" => "Basic clock example",
         "url" => $path . "Small/JS/clock/clock.php",
         "creator" => "Eliot Valdes",
@@ -46,7 +46,7 @@ $projects = array(
         )
     ),
     2 => array(
-        "ID" => "1",
+        "ID" => "3",
         "language" => "Python",
         "language_icon" => "python",
         "name" => "Fibonacci Series",
