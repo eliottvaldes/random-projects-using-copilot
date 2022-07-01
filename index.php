@@ -242,7 +242,8 @@ require __DIR__ . '/vendor/autoload.php';
                     // get all projects from the API
                     axios.get("https://copilot-projects.herokuapp.com/api/v1/get-projects.php")
                         .then(response => {
-                            this.projects = [response.data]
+                            this.projects = response.data
+                            console.log(this.projects)
                         }).catch(error => {
                             // TEMPORARY SOLUTION TO GET ALL PROJECTS WITHOUT ERRORS
                             this.errors_projects.push("there's an error getting the projects , it's not your fault :).")
@@ -250,7 +251,6 @@ require __DIR__ . '/vendor/autoload.php';
                         }).finally(() => {
                             this.fetchingProjects = false
                         })
-                    console.error(this.errors_projects)
                 },
                 clearErrorMessages(typeOfError) {
                     if (typeOfError == 'errors_projects') {

@@ -32,20 +32,21 @@ $messages = array(
             "instagram" => "@eliotvaldes_",
             "github" => "https://github.com/eliottvaldes",
         ),
-        1 => array(
-            "ID" => "DEPD",
-            "name" => "...",
-            "email" => "",
-            "phone" => "",
-            "country" => "",
-            "position" => "",
-            "website" => "",
-            "linkedin" => "",
-            "twitter" => "",
-            "facebook" => "",
-            "instagram" => "",
-            "github" => "",
-        ),
+        // TEMPLATE
+        // 1 => array(
+        //     "ID" => "XXXX",
+        //     "name" => "...",
+        //     "email" => "",
+        //     "phone" => "",
+        //     "country" => "",
+        //     "position" => "",
+        //     "website" => "",
+        //     "linkedin" => "",
+        //     "twitter" => "",
+        //     "facebook" => "",
+        //     "instagram" => "",
+        //     "github" => "",
+        // ),
     )
 
 );
