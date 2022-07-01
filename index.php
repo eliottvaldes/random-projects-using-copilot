@@ -216,15 +216,15 @@ require __DIR__ . '/vendor/autoload.php';
             methods: {
                 showMessages() {
                     // get all messajes from the API                    
-                    axios.get("https://copilot-projects.herokuapp.com/api/v1/get-messages.php").then(response => {
-                        this.messages = [response.data]
-                    }).catch(error => {
-                        // TEMPORARY SOLUTION TO GET THE ERROR MESSAGE WITHOUT THE API
-                        this.errors_msg.push("error getting messages")
-                        // this.errors_msg.push(error)
-                    }).finally(() => {
-                        this.fetchingMessages = false
-                    })
+                    axios.get("https://copilot-projects.herokuapp.com/api/v1/get-messages.php")
+                        .then(response => {
+                            this.messages = [response.data]
+                        }).catch(error => {
+                            this.errors_msg.push("error getting messages")
+                            // this.errors_msg.push(error)
+                        }).finally(() => {
+                            this.fetchingMessages = false
+                        })
 
                 },
                 showAllProjects() {
@@ -239,12 +239,12 @@ require __DIR__ . '/vendor/autoload.php';
                 },
                 getAllProjects() {
                     // get all projects from the API
-                    axios.get("/api/projects")
+                    axios.get("https://copilot-projects.herokuapp.com/api/v1/get-projects.php")
                         .then(response => {
-                            this.projects = response.data
+                            this.projects = [response.data]
                         }).catch(error => {
                             // TEMPORARY SOLUTION TO GET ALL PROJECTS WITHOUT ERRORS
-                            // this.errors_projects.push("there's an error getting the projects , it's not your fault :).")
+                            this.errors_projects.push("there's an error getting the projects , it's not your fault :).")
                             // this.errors_projects.push(error)
                         }).finally(() => {
                             this.fetchingProjects = false
