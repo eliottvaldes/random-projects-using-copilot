@@ -74,7 +74,7 @@ require __DIR__ . '/vendor/autoload.php';
                                         </h4>
                                         <hr class="my-3">
                                         <h5 class="text-start">
-                                            Collabotaros:
+                                            Contributors:
                                             <br><br>
                                             <div class="mb-3 text-start" v-for="{ID, name, email, position, country, phone, github} in collaborators">
                                                 <p>
