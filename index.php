@@ -129,6 +129,8 @@ require __DIR__ . '/vendor/autoload.php';
                                 <!-- buttons to hide | show prohects-->
                                 <div id="action-button-container">
 
+                                    <hr class="my-3">
+
                                     <!-- button to show all projects -->
                                     <div v-if="!showProjects">
                                         <button class="btn btn-primary" @click="showAllProjects()">
@@ -163,7 +165,7 @@ require __DIR__ . '/vendor/autoload.php';
                                         <div class="container">
 
                                             <!-- header information -->
-                                            <h1 class="fw-light my-4">
+                                            <h1 class="fw-light mb-4">
                                                 Here you can find more info about our projects.
                                             </h1>
 
