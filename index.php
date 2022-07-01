@@ -24,6 +24,8 @@ require __DIR__ . '/vendor/autoload.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- import vuejs link -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <!-- implemnt fontawesome link -->
+    <script src="https://kit.fontawesome.com/138878e8dd.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -134,7 +136,7 @@ require __DIR__ . '/vendor/autoload.php';
                                         </button>
                                     </div>
                                     <!-- button to hide projects -->
-                                    <div v-else-if="!errors_projects">
+                                    <div v-else-if="!(errors_projects.length)">
                                         <button class="btn btn-primary" @click="hideAllProjects()">
                                             Hide projects
                                         </button>
@@ -189,10 +191,7 @@ require __DIR__ . '/vendor/autoload.php';
                                                                     <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                                                                 </div>
                                                                 <small class="text-muted">
-                                                                    {{language}} - {{language_icon}}
-                                                                </small>
-                                                                <small>
-                                                                    {{creator}}
+                                                                    <i :class="'fa-brands fa-' + language_icon"></i>
                                                                 </small>
                                                             </div>
                                                         </div>
@@ -268,7 +267,7 @@ require __DIR__ . '/vendor/autoload.php';
                 },
                 hideAllProjects() {
                     this.showProjects = false
-                    this.clearErrorMessages(errors_projects);
+                    this.clearErrorMessages('errors_projects');
                 },
                 getAllProjects() {
                     // get all projects from the API

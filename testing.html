@@ -25,6 +25,8 @@ require __DIR__ . '/vendor/autoload.php';
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- import vuejs link -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <!-- implemnt fontawesome link -->
+    <script src="https://kit.fontawesome.com/138878e8dd.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -138,7 +140,7 @@ require __DIR__ . '/vendor/autoload.php';
                                         </button>
                                     </div>
                                     <!-- button to hide projects -->
-                                    <div v-else-if="!errors_projects">
+                                    <div v-else-if="!(errors_projects.length)">
                                         <button class="btn btn-primary" @click="hideAllProjects()">
                                             Hide projects
                                         </button>
@@ -199,11 +201,11 @@ require __DIR__ . '/vendor/autoload.php';
                                                                     <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                                                                 </div>
                                                                 <small class="text-muted">
-                                                                    {{language}} - {{language_icon}}
+                                                                    <i :class="'fa-brands fa-' + language_icon"></i>
                                                                 </small>
-                                                                <small>
+                                                                <!-- <small>
                                                                     {{creator}}
-                                                                </small>
+                                                                </small> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -286,7 +288,7 @@ require __DIR__ . '/vendor/autoload.php';
                 },
                 hideAllProjects() {
                     this.showProjects = false
-                    this.clearErrorMessages(errors_projects);
+                    this.clearErrorMessages('errors_projects');
                 },
                 getAllProjects() {
                     // get all projects from the API
@@ -305,14 +307,14 @@ require __DIR__ . '/vendor/autoload.php';
                     // ** TESTING USE **
                     this.projects = [
                         {
-                            "ID": "1", "language": "Python", "language_icon": "Python",
+                            "ID": "1", "language": "Python", "language_icon": "python",
                             "name": "Pyscript example", "description": "Example of a Python script inside of HTML",
                             "url": "https://copilot-projects.herokuapp.com/PROJECTS/Small/PYTHON/Frankenstein/pyscript.html",
                             "creator": "Eliot Valdes", "gallery": ["https://copilot.io/assets/images/copilot-logo.png",
                                 "https://copilot.io/assets/images/copilot-logo.png"]
                         },
                         {
-                            "ID": "1", "language": "Python", "language_icon": "Python",
+                            "ID": "1", "language": "Python", "language_icon": "python",
                             "name": "Pyscript example", "description": "Example of a Python script inside of HTML",
                             "url": "https://copilot-projects.herokuapp.com/PROJECTS/Small/PYTHON/Frankenstein/pyscript.html",
                             "creator": "Eliot Valdes", "gallery": ["https://copilot.io/assets/images/copilot-logo.png",
