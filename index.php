@@ -131,14 +131,14 @@ require __DIR__ . '/vendor/autoload.php';
                                         Try again
                                     </button>
                                     <br><br>
-                                    <p class="fst-italic">
+                                    <p class="fst-italic"></p>
                                         If the error persists, please contact the administrator.
                                         <a href="mailto:eliottvaldes@hotmail.com"></a>
                                     </p>
                                 </div>
 
                                 <!-- buttons to hide | show projects-->
-                                <div id="action-button-container mb-5">
+                                <div id="action-button-container">
 
                                     <hr class="my-3">
 
@@ -154,6 +154,8 @@ require __DIR__ . '/vendor/autoload.php';
                                             <i class="fa-solid fa-arrow-up"></i> Hide projects
                                         </button>
                                     </div>
+
+                                    <br>
 
                                 </div>
 
