@@ -79,8 +79,8 @@ require __DIR__ . '/vendor/autoload.php';
                                             <i class="fa-solid fa-user-astronaut"></i> Contributors:
                                             <br><br>
                                             <div class="mb-3 text-start" v-for="{ID, name, email, position, country, phone, github} in collaborators">
-                                                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2">
-                                                    <div class="col-4">
+                                                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                                                    <div class="col col-sm-12 col-md-12 col-lg-6">
                                                         <p>
                                                             <button class="btn btn-primary text-start" type="button" data-bs-toggle="collapse" :data-bs-target="'#'+ID" aria-expanded="false" :aria-controls="ID">
                                                                 {{name}} ~
@@ -90,7 +90,7 @@ require __DIR__ . '/vendor/autoload.php';
                                                             </button>
                                                         </p>
                                                     </div>
-                                                    <div class="col-8">
+                                                    <div class="col col-sm-12 col-md-12 col-lg-6">
                                                         <div class="collapse" :id="ID">
                                                             <div class="card card-body shadow p-3 mb-5 bg-body rounded">
                                                                 <p class="card-title">
@@ -137,8 +137,8 @@ require __DIR__ . '/vendor/autoload.php';
                                     </p>
                                 </div>
 
-                                <!-- buttons to hide | show prohects-->
-                                <div id="action-button-container">
+                                <!-- buttons to hide | show projects-->
+                                <div id="action-button-container mb-5">
 
                                     <hr class="my-3">
 

@@ -77,13 +77,13 @@ require __DIR__ . '/vendor/autoload.php';
                                             {{information}} <i class="fa-solid fa-microchip"></i>
                                         </h4>
                                         <hr class="my-3">
-                                        <h5 class="text-start">
+                                        <h5 class="text-start w-100">
                                             <i class="fa-solid fa-user-astronaut"></i> Contributors:
                                             <br><br>
                                             <div class="mb-3 text-start"
                                                 v-for="{ID, name, email, position, country, phone, github} in collaborators">
-                                                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2">
-                                                    <div class="col-4">
+                                                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                                                    <div class="col col-sm-12 col-md-12 col-lg-6">
                                                         <p>
                                                             <button class="btn btn-primary text-start" type="button"
                                                                 data-bs-toggle="collapse" :data-bs-target="'#'+ID"
@@ -91,11 +91,11 @@ require __DIR__ . '/vendor/autoload.php';
                                                                 {{name}} ~
                                                                 {{position}}
                                                                 <br>
-                                                                <i class="fa-solid fa-circle-info"></i> View Details 
+                                                                <i class="fa-solid fa-circle-info"></i> View Details
                                                             </button>
                                                         </p>
                                                     </div>
-                                                    <div class="col-8">
+                                                    <div class="col col-sm-12 col-md-12 col-lg-6">
                                                         <div class="collapse" :id="ID">
                                                             <div class="card card-body shadow p-3 mb-5 bg-body rounded">
                                                                 <p class="card-title">
@@ -145,8 +145,8 @@ require __DIR__ . '/vendor/autoload.php';
                                     </p>
                                 </div>
 
-                                <!-- buttons to hide | show prohects-->
-                                <div id="action-button-container">
+                                <!-- buttons to hide | show projects-->
+                                <div id="action-button-container mb-5">
 
                                     <hr class="my-3">
 
@@ -186,7 +186,7 @@ require __DIR__ . '/vendor/autoload.php';
                                             <!-- header information -->
                                             <h1 class="fw-light mb-5">
                                                 <i class="fa-solid fa-vial"></i>
-                                                Here you can find more info about our projects. 
+                                                Here you can find more info about our projects.
                                                 <i class="fa-solid fa-vial"></i>
                                             </h1>
 
