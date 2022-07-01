@@ -159,7 +159,7 @@ require __DIR__ . '/vendor/autoload.php';
                                         {{projects}}
                                         <ul class="list-group">
                                             <li class="list-group-item" v-for="project in projects">
-                                                {{project-ID}} -
+                                                {{project.ID}} -
                                                 {{project.language}} -
                                                 {{project.language_icon}}-
                                                 {{project.name}} -
@@ -167,6 +167,7 @@ require __DIR__ . '/vendor/autoload.php';
                                                 {{project.url}} -
                                                 {{project.image}} -
                                                 {{project.creator}}
+                                                <br>
                                             </li>
                                         </ul>
                                     </div>
