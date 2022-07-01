@@ -132,8 +132,8 @@ require __DIR__ . '/vendor/autoload.php';
                                     </button>
                                     <br><br>
                                     <p class="fst-italic"></p>
-                                        If the error persists, please contact the administrator.
-                                        <a href="mailto:eliottvaldes@hotmail.com"></a>
+                                    If the error persists, please contact the administrator.
+                                    <a href="mailto:eliottvaldes@hotmail.com"></a>
                                     </p>
                                 </div>
 
@@ -173,7 +173,7 @@ require __DIR__ . '/vendor/autoload.php';
                                     </div>
 
                                     <!-- in case projects show all -->
-                                    <div v-if="projects.length">
+                                    <div class="album py-5 bg-light" v-if="projects.length && !fetchingProjects">
 
                                         <!-- card proyect container -->
                                         <div class="container">
@@ -220,8 +220,9 @@ require __DIR__ . '/vendor/autoload.php';
                                         </div>
 
                                     </div>
+
                                     <!-- in case no exist any project and no error was catched -->
-                                    <div v-else-if="!projects.length && !errors_projects.length">
+                                    <div v-else-if="!projects.length && !errors_projects.length && !fetchingProjects">
                                         <h1 class="my-3">
                                             <i class="fa-regular fa-face-sad-cry"></i>
                                             No projects found.
