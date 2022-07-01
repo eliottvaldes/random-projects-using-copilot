@@ -19,7 +19,7 @@ require __DIR__ . '/vendor/autoload.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome!!</title>
+    <title>Just For Fun!</title>
     <!-- import link for bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- import vuejs link -->
@@ -35,9 +35,9 @@ require __DIR__ . '/vendor/autoload.php';
 
             <div class="row text-center">
                 <div class="col-md-12">
-                    <div class="card shadow p-3 mb-5 bg-body rounded">
-                        <div class="card-body">
-                            <div class="card-header">
+                    <div>
+                        <div>
+                            <div>
 
                                 <!-- show a loader while si charging -->
                                 <div v-if="fetchingMessages">
@@ -68,36 +68,47 @@ require __DIR__ . '/vendor/autoload.php';
                                     <div v-for="{welcome, information, collaborators} in messages">
                                         <h1>
                                             <!-- show the data inside messages using vuejs-->
-                                            {{welcome}}
+                                            <i class="fa-solid fa-code"></i> {{welcome}} <i class="fa-solid fa-code"></i>
                                         </h1>
                                         <hr class="my-3">
                                         <h4>
-                                            {{information}}
+                                            {{information}} <i class="fa-solid fa-microchip"></i>
                                         </h4>
                                         <hr class="my-3">
                                         <h5 class="text-start">
-                                            Contributors:
+                                            <i class="fa-solid fa-user-astronaut"></i> Contributors:
                                             <br><br>
                                             <div class="mb-3 text-start" v-for="{ID, name, email, position, country, phone, github} in collaborators">
-                                                <p>
-                                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" :data-bs-target="'#'+ID" aria-expanded="false" :aria-controls="ID">
-                                                        {{name}} - {{position}} <br>
-                                                        View Details
-                                                    </button>
-                                                </p>
-                                                <div class="collapse" :id="ID">
-                                                    <div class="card card-body shadow-sm p-3 mb-5 bg-body rounded">
-                                                        <div class="card-title">
-                                                            CONTACT:
+                                                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2">
+                                                    <div class="col-4">
+                                                        <p>
+                                                            <button class="btn btn-primary text-start" type="button" data-bs-toggle="collapse" :data-bs-target="'#'+ID" aria-expanded="false" :aria-controls="ID">
+                                                                {{name}} ~
+                                                                {{position}}
+                                                                <br>
+                                                                View Details <i class="fa-solid fa-circle-info"></i>
+                                                            </button>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="collapse" :id="ID">
+                                                            <div class="card card-body shadow p-3 mb-5 bg-body rounded">
+                                                                <p class="card-title">
+                                                                    <i class="fa-solid fa-id-card-clip"></i> CONTACT:
+                                                                </p>
+                                                                <p class="card-text">
+                                                                    <br>
+                                                                    <i class="fa-solid fa-envelope"></i> Email => <a :href="'mailto:'+email">{{email}}</a>
+                                                                    <br>
+                                                                    <i class="fa-brands fa-github"></i> Github => <a :href="github" target="_blank">{{github}}</a>
+                                                                    <br>
+                                                                    <i class="fa-solid fa-phone"></i> Phone => (+52) <a href="tel:">{{phone}}</a>
+                                                                    <br>
+                                                                    <i class="fa-solid fa-globe"></i> Country =>
+                                                                    {{country}}
+                                                                </p>
+                                                            </div>
                                                         </div>
-                                                        <br>
-                                                        Email => <a :href="'mailto:'+email">{{email}}</a>
-                                                        <br>
-                                                        Github => <a :href="github" target="_blank">{{github}}</a>
-                                                        <br>
-                                                        Phone => (+52) <a href="tel:">{{phone}}</a>
-                                                        <br>
-                                                        Country => {{country}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,7 +119,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 
                             </div>
-                            <div class="card-text py-3" id="projects-container">
+                            <div class="py-3" id="projects-container">
 
 
                                 <!-- show error messages in case it exists -->
@@ -134,15 +145,16 @@ require __DIR__ . '/vendor/autoload.php';
                                     <!-- button to show all projects -->
                                     <div v-if="!showProjects">
                                         <button class="btn btn-primary" @click="showAllProjects()">
-                                            Show projects
+                                            <i class="fa-solid fa-arrow-down"></i> Show projects
                                         </button>
                                     </div>
                                     <!-- button to hide projects -->
                                     <div v-else-if="!(errors_projects.length)">
                                         <button class="btn btn-primary" @click="hideAllProjects()">
-                                            Hide projects
+                                            <i class="fa-solid fa-arrow-up"></i> Hide projects
                                         </button>
                                     </div>
+
                                 </div>
 
                                 <!-- show all projects -->
@@ -165,15 +177,17 @@ require __DIR__ . '/vendor/autoload.php';
                                         <div class="container">
 
                                             <!-- header information -->
-                                            <h1 class="fw-light mb-4">
+                                            <h1 class="fw-light mb-5">
+                                                <i class="fa-solid fa-vial"></i>
                                                 Here you can find more info about our projects.
+                                                <i class="fa-solid fa-vial"></i>
                                             </h1>
 
                                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                                                 <!-- create a card for each project -->
                                                 <div class="col mb-2 text-start" v-for="{ID, name, description, url, gallery, language, language_icon, creator} in projects">
                                                     <div class="card shadow-sm" style="height: 100%;">
-                                                        <img :src="gallery[0]" :alt="'Imagen de proyecto ' + name" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                                                        <img :src="gallery[0]" :alt="'Image of project ' + name" class="bd-placeholder-img card-img-top" width="100%" height="225">
                                                         <div class="card-body">
                                                             <p class="card-title">
                                                                 {{name}}
@@ -185,10 +199,10 @@ require __DIR__ . '/vendor/autoload.php';
                                                             <div class="d-flex justify-content-between align-items-center">
                                                                 <div class="btn-group">
                                                                     <a :href="url" target="_blank" class="btn btn-sm btn-outline-primary">
-                                                                        Ver
+                                                                        App
                                                                     </a>
                                                                     <a href="https://github.com/eliottvaldes/random-projects-using-copilot" target="_blank" class="btn btn-sm btn-outline-primary">
-                                                                        Codigo
+                                                                        Code
                                                                     </a>
                                                                     <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                                                                 </div>
@@ -205,9 +219,11 @@ require __DIR__ . '/vendor/autoload.php';
 
                                     </div>
                                     <!-- in case no exist any project and no error was catched -->
-                                    <div v-if="!projects.length && !errors_projects.length">
-                                        <h1>
+                                    <div v-else-if="!projects.length && !errors_projects.length">
+                                        <h1 class="my-3">
+                                            <i class="fa-regular fa-face-sad-cry"></i>
                                             No projects found.
+                                            <i class="fa-regular fa-face-sad-cry"></i>
                                         </h1>
                                     </div>
                                 </div>
