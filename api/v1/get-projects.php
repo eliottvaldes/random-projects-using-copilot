@@ -59,3 +59,9 @@ $projects = array(
         )
     ),
 );
+
+
+# return the projects
+echo json_encode($projects);
+
+die();
