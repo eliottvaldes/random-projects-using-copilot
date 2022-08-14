@@ -1,7 +1,18 @@
 <?php
 
 # we need to call the autoloader
-require __DIR__ . '/vendor/autoload.php';
+// require __DIR__ . '/vendor/autoload.php';
+
+$deployEnviroment = [
+    "heroku" => [
+        "messages" => "https://copilot-projects.herokuapp.com/api/v1/get-messages.php",
+        "projects" => "https://copilot-projects.herokuapp.com/api/v1/get-projects.php",
+    ],
+    "azure" => [
+        "messages" => "api/v1/get-messages.php",
+        "projects" => "api/v1/get-projects.php",
+    ],
+];
 
 ?>
 <!-- 
@@ -199,7 +210,7 @@ require __DIR__ . '/vendor/autoload.php';
                                                                 {{description}}
                                                             </p>
                                                             <div class="d-flex justify-content-between align-items-center">
-                                                                <div class="btn-group">
+                                                                <div class="btn-group"></div>
                                                                     <a :href="url" target="_blank" class="btn btn-sm btn-outline-primary">
                                                                         App
                                                                     </a>
@@ -269,7 +280,7 @@ require __DIR__ . '/vendor/autoload.php';
             methods: {
                 showMessages() {
                     // get all messajes from the API                    
-                    axios.get("https://copilot-projects.herokuapp.com/api/v1/get-messages.php")
+                    axios.get("<?php echo $deployEnviroment['azure']['messages'] ; ?>")
                         .then(response => {
                             this.messages = [response.data]
                         }).catch(error => {
@@ -292,7 +303,7 @@ require __DIR__ . '/vendor/autoload.php';
                 },
                 getAllProjects() {
                     // get all projects from the API
-                    axios.get("https://copilot-projects.herokuapp.com/api/v1/get-projects.php")
+                    axios.get("<?php echo $deployEnviroment['azure']['projects'] ; ?>")
                         .then(response => {
                             this.projects = response.data
                             console.log(this.projects)
