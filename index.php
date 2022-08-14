@@ -1,7 +1,7 @@
 <?php
 
 # we need to call the autoloader
-// require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 $deployEnviroment = [
     "heroku" => [
@@ -200,7 +200,7 @@ $deployEnviroment = [
                                                 <!-- create a card for each project -->
                                                 <div class="col mb-2 text-start" v-for="{ID, name, description, url, gallery, language, language_icon, creator} in projects">
                                                     <div class="card shadow-sm" style="height: 100%;">
-                                                        <img :src="gallery[0]" :alt="'Image of project ' + name" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                                                        <img src="img-bckg.jpg" :alt="'Image of project ' + name" class="bd-placeholder-img card-img-top" width="100%" height="225">
                                                         <div class="card-body">
                                                             <p class="card-title">
                                                                 {{name}}
@@ -233,7 +233,7 @@ $deployEnviroment = [
                                     </div>
 
                                     <!-- in case no exist any project and no error was catched -->
-                                    <div v-else-if="!projects.length && !errors_projects.length && !fetchingProjects">
+                                    <div v-else-if="!projects.length && !errors_projects.length && fetchingProjects">
                                         <h1 class="my-3">
                                             <i class="fa-regular fa-face-sad-cry"></i>
                                             No projects found.
@@ -306,7 +306,7 @@ $deployEnviroment = [
                     axios.get("<?php echo $deployEnviroment['azure']['projects'] ; ?>")
                         .then(response => {
                             this.projects = response.data
-                            console.log(this.projects)
+                            // console.log(this.projects)
                         }).catch(error => {
                             // TEMPORARY SOLUTION TO GET ALL PROJECTS WITHOUT ERRORS
                             this.errors_projects.push("there's an error getting the projects , it's not your fault :).")
