@@ -1,20 +1,16 @@
 {
-    "name": "eliottvaldes/random-projects-using-copilot",
-    "description": "deploy using heroku",
-    "type": "project",
-    "require": {
-        "php": "^7.4.0"
-    },
-    "license": "MIT",
+    "name": "eliot/random-projects-using-copilot",
+    "description": "test deploying using Azure App Services",
     "autoload": {
         "psr-4": {
-            "Eliottvaldes\\RandomProjectsUsingCopilot\\": "src/"
+            "EliotValdes\\RandomProjectsUsingCopilot\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "eliottvaldes",
+            "name": "Eliot Valdes",
             "email": "eliottvaldes@hotmail.com"
         }
-    ]
+    ],
+    "require": {}
 }
